@@ -1,0 +1,4 @@
+period,churned,avg_churn_per_month,price_reason_pct
+1. Pre-hike (Feb-Jun 24),285,57.0,21.1
+2. Hike window (Jul-Sep 24),443,147.7,37.2
+3. Post-hike (Oct 24 onward),1156,77.1,18.5

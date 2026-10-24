@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Telecom_Churn_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "34f3ab83-3876-4e8e-9842-94737fcdfd6f"
+  }
+}

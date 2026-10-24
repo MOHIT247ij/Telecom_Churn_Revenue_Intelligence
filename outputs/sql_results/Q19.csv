@@ -1,0 +1,8 @@
+service_type,contract_type,customers,arpu,monthly_churn_pct,expected_life_months,clv_gross_margin
+Fiber Broadband,24 Month,324,1044.0,0.59,120.0,50094.0
+Postpaid Mobile,24 Month,540,858.0,0.48,120.0,41207.0
+Fiber Broadband,12 Month,405,1003.0,1.02,98.2,39398.0
+Postpaid Mobile,12 Month,655,845.0,0.91,109.5,37028.0
+Fiber Broadband,Month-to-Month,700,1115.0,3.54,28.2,12596.0
+Postpaid Mobile,Month-to-Month,1233,881.0,3.39,29.5,10398.0
+Prepaid Mobile,Prepaid (No Contract),4143,387.0,1.97,50.8,7856.0

@@ -1,0 +1,8 @@
+service_type,contract_type,customers,churn_rate_pct,avg_charge
+Fiber Broadband,Month-to-Month,700,43.86,1115.0
+Fiber Broadband,12 Month,405,16.05,1003.0
+Fiber Broadband,24 Month,324,9.88,1044.0
+Postpaid Mobile,Month-to-Month,1233,43.96,881.0
+Postpaid Mobile,12 Month,655,14.96,845.0
+Postpaid Mobile,24 Month,540,7.96,858.0
+Prepaid Mobile,Prepaid (No Contract),4143,28.99,387.0

@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+outputs/telecom_churn.db
+outputs/models/*.pkl

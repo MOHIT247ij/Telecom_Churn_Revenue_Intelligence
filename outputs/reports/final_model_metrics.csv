@@ -1,0 +1,2 @@
+model,threshold,accuracy,precision,recall,f1,roc_auc
+Gradient Boosting,0.31,0.8319,0.6814,0.7751,0.7252,0.8962

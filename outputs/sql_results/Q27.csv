@@ -1,0 +1,31 @@
+customer_id,circle,service_type,monthly_charges,baseline_gb,recent_gb,usage_change_pct
+CUST107334,Karnataka,Prepaid Mobile,548.0,81.6,43.8,-46.3
+CUST101723,Tamil Nadu,Postpaid Mobile,399.0,52.9,30.4,-42.5
+CUST101049,Delhi NCR,Prepaid Mobile,399.0,47.9,28.1,-41.4
+CUST102793,Telangana,Postpaid Mobile,748.0,95.6,58.5,-38.9
+CUST102068,Delhi NCR,Prepaid Mobile,548.0,63.5,38.9,-38.8
+CUST104924,Karnataka,Prepaid Mobile,448.0,31.8,19.8,-37.8
+CUST105874,Maharashtra,Postpaid Mobile,1048.0,136.0,84.7,-37.7
+CUST105230,Uttar Pradesh,Postpaid Mobile,648.0,84.8,53.7,-36.7
+CUST103845,Tamil Nadu,Prepaid Mobile,748.0,69.9,44.2,-36.7
+CUST102743,Uttar Pradesh,Postpaid Mobile,548.0,33.6,21.4,-36.1
+CUST104818,Tamil Nadu,Prepaid Mobile,498.0,34.0,21.8,-35.9
+CUST104324,Delhi NCR,Prepaid Mobile,399.0,36.5,23.7,-35.2
+CUST103660,Delhi NCR,Postpaid Mobile,1148.0,227.6,148.0,-35.0
+CUST106197,Maharashtra,Prepaid Mobile,399.0,59.9,40.2,-33.0
+CUST104257,Karnataka,Postpaid Mobile,599.0,56.8,38.1,-32.9
+CUST100651,West Bengal,Fiber Broadband,805.6,2667.8,1799.9,-32.5
+CUST102832,Karnataka,Postpaid Mobile,804.65,103.1,69.7,-32.3
+CUST105310,Karnataka,Fiber Broadband,629.1,2893.7,1961.5,-32.2
+CUST101981,Karnataka,Fiber Broadband,1397.0,1855.9,1258.2,-32.2
+CUST106954,Uttar Pradesh,Prepaid Mobile,299.0,42.6,29.0,-32.0
+CUST100216,Maharashtra,Postpaid Mobile,599.0,57.1,39.0,-31.8
+CUST103574,Delhi NCR,Prepaid Mobile,748.0,149.0,101.6,-31.8
+CUST105795,Gujarat,Prepaid Mobile,547.0,36.8,25.1,-31.8
+CUST104845,Delhi NCR,Prepaid Mobile,199.0,12.4,8.6,-31.3
+CUST105508,Uttar Pradesh,Prepaid Mobile,697.0,55.3,38.0,-31.3
+CUST105842,Delhi NCR,Fiber Broadband,763.2,1301.3,895.0,-31.2
+CUST103734,Maharashtra,Fiber Broadband,699.0,2797.6,1923.7,-31.2
+CUST104641,Maharashtra,Prepaid Mobile,299.0,48.9,33.9,-30.7
+CUST107982,Telangana,Prepaid Mobile,199.0,13.1,9.1,-30.6
+CUST103566,West Bengal,Prepaid Mobile,548.0,46.0,32.0,-30.4

@@ -1,0 +1,5 @@
+segment,customers,avg_charge,avg_tenure,churn_rate_pct
+"1. Champions (high spend, loyal)",1983,945.0,47.3,23.0
+"2. High-value at risk (high spend, new)",2017,982.0,7.7,38.13
+3. Loyal value seekers,2017,345.0,47.9,19.93
+4. Low-value new,1983,343.0,7.8,33.33

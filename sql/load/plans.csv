@@ -1,0 +1,12 @@
+plan_id,plan_name,service_type,monthly_fee,data_gb_limit,voice_benefit,plan_tier
+PP199,Prepaid Basic 4G,Prepaid Mobile,199,30,Unlimited,Value
+PP299,Prepaid Smart 5G,Prepaid Mobile,299,60,Unlimited,Value
+PP399,Prepaid Unlimited 5G,Prepaid Mobile,399,90,Unlimited,Value
+PP599,Prepaid Unlimited Plus,Prepaid Mobile,599,150,Unlimited,Mid
+PO399,Postpaid Essential,Postpaid Mobile,399,75,Unlimited,Value
+PO599,Postpaid Plus,Postpaid Mobile,599,120,Unlimited,Mid
+PO999,Postpaid Family (3 SIM),Postpaid Mobile,999,250,Unlimited,Premium
+PO1499,Postpaid Premium,Postpaid Mobile,1499,400,Unlimited + ISD,Premium
+FB699,Fiber 100 Mbps,Fiber Broadband,699,3300,Landline,Mid
+FB999,Fiber 300 Mbps,Fiber Broadband,999,3300,Landline,Premium
+FB1499,Fiber 1 Gbps,Fiber Broadband,1499,5000,Landline,Premium

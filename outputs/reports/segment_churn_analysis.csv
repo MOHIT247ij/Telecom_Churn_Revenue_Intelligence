@@ -1,0 +1,39 @@
+dimension,segment,customers,churn_rate,lift_vs_avg
+contract_type,24 Month,864,0.0868,0.3
+contract_type,12 Month,1060,0.1538,0.54
+contract_type,Prepaid (No Contract),4143,0.2899,1.01
+contract_type,Month-to-Month,1933,0.4392,1.54
+tenure_band,0-6 M,1881,0.4779,1.67
+tenure_band,7-12 M,1217,0.2671,0.93
+tenure_band,13-24 M,1624,0.2106,0.74
+tenure_band,25-48 M,1358,0.3056,1.07
+tenure_band,48+ M,1920,0.1599,0.56
+circle,Gujarat,789,0.2611,0.91
+circle,Karnataka,1105,0.2615,0.91
+circle,Maharashtra,1642,0.2661,0.93
+circle,Delhi NCR,1220,0.2672,0.93
+circle,Telangana,614,0.2687,0.94
+circle,Tamil Nadu,969,0.2693,0.94
+circle,West Bengal,720,0.3236,1.13
+circle,Uttar Pradesh,941,0.3943,1.38
+payment_method,Auto-Debit (NACH),1179,0.212,0.74
+payment_method,Wallet,490,0.2571,0.9
+payment_method,Credit / Debit Card,1401,0.2755,0.96
+payment_method,UPI,3377,0.2949,1.03
+payment_method,Net Banking,547,0.3053,1.07
+payment_method,Retail Recharge (Cash),1006,0.3608,1.26
+charge_band,< 300,1806,0.2663,0.93
+charge_band,300-600,2813,0.2659,0.93
+charge_band,600-1000,1963,0.2567,0.9
+charge_band,1000+,1418,0.3914,1.37
+ticket_bucket,< 0.1,1250,0.3936,1.38
+ticket_bucket,0.1-0.25,2261,0.1986,0.69
+ticket_bucket,0.25-0.5,3221,0.2667,0.93
+ticket_bucket,0.5-1,1213,0.3726,1.3
+ticket_bucket,1+,55,0.6545,2.29
+service_type,Postpaid Mobile,2428,0.2813,0.98
+service_type,Fiber Broadband,1429,0.2827,0.99
+service_type,Prepaid Mobile,4143,0.2899,1.01
+network_type,5G,3307,0.2728,0.95
+network_type,FTTH,1429,0.2827,0.99
+network_type,4G,3264,0.3009,1.05

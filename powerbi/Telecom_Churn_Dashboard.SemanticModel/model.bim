@@ -1,0 +1,1941 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DataFolder\", \"dim_customer\", \"dim_date\", \"dim_geography\", \"dim_plan\", \"fact_billing\", \"fact_usage\", \"fact_tickets\", \"fact_churn_predictions\", \"fact_monthly_kpis\", \"Save Rate\", \"Offer Cost\", \"_Measures\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DataFolder",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"E:\\ALL_PROJECT\\Telecom_Churn_Revenue_Intelligence\\powerbi\\model_data\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "06d4fe9a-b3d8-421d-b6a5-9a75cebf9601"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "2bd69f83-3212-461c-b9fe-89da95a07f07",
+        "fromColumn": "customer_id",
+        "fromTable": "fact_billing",
+        "toColumn": "customer_id",
+        "toTable": "dim_customer"
+      },
+      {
+        "name": "5fdf0d16-f0c5-420e-9613-1bd8105f254b",
+        "fromColumn": "customer_id",
+        "fromTable": "fact_usage",
+        "toColumn": "customer_id",
+        "toTable": "dim_customer"
+      },
+      {
+        "name": "2c3a1393-6d3c-4012-9458-8f5173de85c0",
+        "fromColumn": "customer_id",
+        "fromTable": "fact_tickets",
+        "toColumn": "customer_id",
+        "toTable": "dim_customer"
+      },
+      {
+        "name": "8ff648aa-b8ee-4968-93ff-c78f17613618",
+        "fromColumn": "customer_id",
+        "fromTable": "fact_churn_predictions",
+        "toColumn": "customer_id",
+        "toTable": "dim_customer"
+      },
+      {
+        "name": "1cbf82ae-e522-426f-a5d6-88f356e37ee9",
+        "fromColumn": "plan_id",
+        "fromTable": "fact_billing",
+        "toColumn": "plan_id",
+        "toTable": "dim_plan"
+      },
+      {
+        "name": "a633e106-3b1a-4cba-a480-9bb578283e8c",
+        "fromColumn": "geo_key",
+        "fromTable": "dim_customer",
+        "toColumn": "geo_key",
+        "toTable": "dim_geography"
+      },
+      {
+        "name": "0381157d-24d6-4784-87b6-4929b3d2adea",
+        "fromColumn": "bill_month",
+        "fromTable": "fact_billing",
+        "toColumn": "date",
+        "toTable": "dim_date"
+      },
+      {
+        "name": "592e7b04-78d7-4f5f-bfe3-c9663ee9ec6e",
+        "fromColumn": "usage_month",
+        "fromTable": "fact_usage",
+        "toColumn": "date",
+        "toTable": "dim_date"
+      },
+      {
+        "name": "61c807fe-5d5c-4849-96e1-4b930d44b428",
+        "fromColumn": "ticket_date",
+        "fromTable": "fact_tickets",
+        "toColumn": "date",
+        "toTable": "dim_date"
+      },
+      {
+        "name": "92f22373-e328-4a89-9190-ca5138048aad",
+        "fromColumn": "month",
+        "fromTable": "fact_monthly_kpis",
+        "toColumn": "date",
+        "toTable": "dim_date"
+      },
+      {
+        "name": "0a7ff2d8-23a2-45da-a362-d4639e9b1d5c",
+        "fromColumn": "join_date",
+        "fromTable": "dim_customer",
+        "isActive": false,
+        "toColumn": "date",
+        "toTable": "dim_date"
+      },
+      {
+        "name": "602536f9-c8df-4dba-86d0-42d3ec28d625",
+        "fromColumn": "churn_date",
+        "fromTable": "dim_customer",
+        "isActive": false,
+        "toColumn": "date",
+        "toTable": "dim_date"
+      }
+    ],
+    "sourceQueryCulture": "en-IN",
+    "tables": [
+      {
+        "name": "dim_customer",
+        "columns": [
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "lineageTag": "627ba37d-7535-451e-8191-6b47491299e0",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "geo_key",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "fab578c4-c8b8-4ecb-9cf7-c4ca57adaeb7",
+            "sourceColumn": "geo_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gender",
+            "dataType": "string",
+            "lineageTag": "8e9df7b9-c653-4e15-b351-ea47c190c179",
+            "sourceColumn": "gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "df679df2-1a58-4062-a4bc-32571b243ee7",
+            "sourceColumn": "age",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age_band",
+            "dataType": "string",
+            "lineageTag": "0804fd34-3d2f-478e-aca4-17065653374f",
+            "sourceColumn": "age_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "senior_citizen",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ec517313-1843-4035-930c-469726d628e4",
+            "sourceColumn": "senior_citizen",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "partner",
+            "dataType": "string",
+            "lineageTag": "f4f1c06d-7a69-47d0-bb1a-b2c2190d3148",
+            "sourceColumn": "partner",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dependents",
+            "dataType": "string",
+            "lineageTag": "b30977af-16fd-4f81-8ce2-89f0b7194b2e",
+            "sourceColumn": "dependents",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "join_date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd-mmm-yyyy",
+            "lineageTag": "43ff5fab-985e-4c3f-b8c7-e90a9aaac51a",
+            "sourceColumn": "join_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "acquisition_channel",
+            "dataType": "string",
+            "lineageTag": "1814b511-701d-487d-b0f3-6eccf796936a",
+            "sourceColumn": "acquisition_channel",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "service_type",
+            "dataType": "string",
+            "lineageTag": "2d5fdbf6-dcca-4fab-bd7a-64d224fd4333",
+            "sourceColumn": "service_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "plan_id",
+            "dataType": "string",
+            "lineageTag": "5fe1ebc6-bdf4-4e0c-bca0-8b5296f71947",
+            "sourceColumn": "plan_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "network_type",
+            "dataType": "string",
+            "lineageTag": "fa7950ac-0a50-4348-83f6-f4b4a6b19554",
+            "sourceColumn": "network_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "contract_type",
+            "dataType": "string",
+            "lineageTag": "774fa176-a5b1-4b6d-9e7e-621d9800b8a2",
+            "sourceColumn": "contract_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "payment_method",
+            "dataType": "string",
+            "lineageTag": "cd68458c-3675-42a8-b99f-a32735b12847",
+            "sourceColumn": "payment_method",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "paperless_billing",
+            "dataType": "string",
+            "lineageTag": "b33d836a-f613-4952-a089-1288eb29cbfe",
+            "sourceColumn": "paperless_billing",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ott_bundle",
+            "dataType": "string",
+            "lineageTag": "a7febfaa-3b20-4454-bf0b-7937bb860efb",
+            "sourceColumn": "ott_bundle",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "device_protection",
+            "dataType": "string",
+            "lineageTag": "26cdbc32-5cb7-4905-ab32-2d8137273463",
+            "sourceColumn": "device_protection",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "intl_roaming",
+            "dataType": "string",
+            "lineageTag": "9a5489ba-5ccd-4d2a-9fd5-2a64abbdb7e0",
+            "sourceColumn": "intl_roaming",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "priority_support",
+            "dataType": "string",
+            "lineageTag": "cc04619d-0c76-4f9c-b603-9530099025c0",
+            "sourceColumn": "priority_support",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "multi_line",
+            "dataType": "string",
+            "lineageTag": "6c98b81b-5067-4c37-acd6-9cda19dae01b",
+            "sourceColumn": "multi_line",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "addon_count",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "031029a1-a858-4afb-a27b-05aa75e6246f",
+            "sourceColumn": "addon_count",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "discount_pct",
+            "dataType": "double",
+            "lineageTag": "a2dd8e32-27cf-4c0d-a571-220b1cf2cc60",
+            "sourceColumn": "discount_pct",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "monthly_charges",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "4150431a-8775-4523-8d19-e818e180c4ab",
+            "sourceColumn": "monthly_charges",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "charge_band",
+            "dataType": "string",
+            "lineageTag": "84060355-c1c6-434d-84a0-53b9f160a2b0",
+            "sortByColumn": "charge_band_sort",
+            "sourceColumn": "charge_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tenure_months",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5b2c5421-3921-4c61-8a2d-af1519831210",
+            "sourceColumn": "tenure_months",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "tenure_band",
+            "dataType": "string",
+            "lineageTag": "44a5dca7-aee3-45e3-82d5-37f7bf5fac0d",
+            "sortByColumn": "tenure_band_sort",
+            "sourceColumn": "tenure_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "churn",
+            "dataType": "string",
+            "lineageTag": "2eff78bf-8dc4-4391-a564-520447159b00",
+            "sourceColumn": "churn",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "churn_flag",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b4ff5efa-9f64-4037-9f36-d9b650513bca",
+            "sourceColumn": "churn_flag",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "churn_date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd-mmm-yyyy",
+            "lineageTag": "9602ee09-eaa2-403a-8612-89a99763fc65",
+            "sourceColumn": "churn_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "churn_reason",
+            "dataType": "string",
+            "lineageTag": "3255293a-a459-42b8-ae96-6e886a149646",
+            "sourceColumn": "churn_reason",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_status",
+            "dataType": "string",
+            "lineageTag": "3562501d-c634-4972-8f33-1f1be3c2f635",
+            "sourceColumn": "customer_status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tenure_band_sort",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "648fd0a7-1401-444c-b220-7ddc7a201602",
+            "sourceColumn": "tenure_band_sort",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "charge_band_sort",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "1d76da7b-c9d7-4225-8a90-85a2d5f121bf",
+            "sourceColumn": "charge_band_sort",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "37417f7e-9837-49cc-8c60-9d473a636af8",
+        "partitions": [
+          {
+            "name": "dim_customer",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"dim_customer.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    Typed = Table.TransformColumnTypes(Promoted, {{\"customer_id\", type text}, {\"geo_key\", type text}, {\"gender\", type text}, {\"age\", Int64.Type}, {\"age_band\", type text}, {\"senior_citizen\", Int64.Type}, {\"partner\", type text}, {\"dependents\", type text}, {\"join_date\", type date}, {\"acquisition_channel\", type text}, {\"service_type\", type text}, {\"plan_id\", type text}, {\"network_type\", type text}, {\"contract_type\", type text}, {\"payment_method\", type text}, {\"paperless_billing\", type text}, {\"ott_bundle\", type text}, {\"device_protection\", type text}, {\"intl_roaming\", type text}, {\"priority_support\", type text}, {\"multi_line\", type text}, {\"addon_count\", Int64.Type}, {\"discount_pct\", type number}, {\"monthly_charges\", Currency.Type}, {\"charge_band\", type text}, {\"tenure_months\", Int64.Type}, {\"tenure_band\", type text}, {\"churn\", type text}, {\"churn_flag\", Int64.Type}, {\"churn_date\", type date}, {\"churn_reason\", type text}, {\"customer_status\", type text}}, \"en-US\"),",
+                "    Add_tenure_band_sort = Table.AddColumn(Typed, \"tenure_band_sort\", each if [tenure_band] = \"0-6 M\" then 1 else if [tenure_band] = \"7-12 M\" then 2 else if [tenure_band] = \"13-24 M\" then 3 else if [tenure_band] = \"25-48 M\" then 4 else 5, Int64.Type),",
+                "    Add_charge_band_sort = Table.AddColumn(Add_tenure_band_sort, \"charge_band_sort\", each if [charge_band] = \"< 300\" then 1 else if [charge_band] = \"300-600\" then 2 else if [charge_band] = \"600-1000\" then 3 else 4, Int64.Type),",
+                "    Clean = Table.ReplaceValue(Add_charge_band_sort, \"\", null, Replacer.ReplaceValue, {\"churn_reason\"})",
+                "in",
+                "    Clean"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_date",
+        "columns": [
+          {
+            "name": "date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd-mmm-yyyy",
+            "isKey": true,
+            "lineageTag": "27c73c4c-0788-4388-8f4e-b20fc1b9573b",
+            "sourceColumn": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "year",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "478dde60-355c-4728-a479-f4b986cee340",
+            "sourceColumn": "year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "quarter",
+            "dataType": "string",
+            "lineageTag": "95b8c048-f056-47bc-ba75-76b90e51808b",
+            "sourceColumn": "quarter",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "month_num",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2c3ce3a4-8ca3-413e-af13-2b647c006f80",
+            "sourceColumn": "month_num",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "month_name",
+            "dataType": "string",
+            "lineageTag": "755edb3b-00ec-4d97-ae71-edb658280c43",
+            "sortByColumn": "month_num",
+            "sourceColumn": "month_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "year_month",
+            "dataType": "string",
+            "lineageTag": "45476e15-9850-4e2c-9c75-34c79ee8045f",
+            "sourceColumn": "year_month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "month_start",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd-mmm-yyyy",
+            "lineageTag": "7a70a076-dbd9-4b92-8427-427fb944ab6a",
+            "sourceColumn": "month_start",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fiscal_year",
+            "dataType": "string",
+            "lineageTag": "27cd2608-1971-4d8b-bd0d-c017aa06b88f",
+            "sourceColumn": "fiscal_year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fiscal_quarter",
+            "dataType": "string",
+            "lineageTag": "9bc2d064-dcde-4d50-a9b9-d92e1675855c",
+            "sourceColumn": "fiscal_quarter",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_weekend",
+            "dataType": "boolean",
+            "lineageTag": "8cec02b0-f566-4392-ac4c-1b4084514885",
+            "sourceColumn": "is_weekend",
+            "summarizeBy": "none"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "d1692efc-953c-4cfe-a559-d5cca949b10f",
+        "partitions": [
+          {
+            "name": "dim_date",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"dim_date.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    Typed = Table.TransformColumnTypes(Promoted, {{\"date\", type date}, {\"year\", Int64.Type}, {\"quarter\", type text}, {\"month_num\", Int64.Type}, {\"month_name\", type text}, {\"year_month\", type text}, {\"month_start\", type date}, {\"fiscal_year\", type text}, {\"fiscal_quarter\", type text}, {\"is_weekend\", type logical}}, \"en-US\"),",
+                "    Window = Table.SelectRows(Typed, each [date] >= #date(2024, 1, 1) and [date] <= #date(2025, 12, 31))",
+                "in",
+                "    Window"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_geography",
+        "columns": [
+          {
+            "name": "geo_key",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "fef17b5a-e173-4ccf-8d32-20e6c4b7ab65",
+            "sourceColumn": "geo_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "circle",
+            "dataCategory": "StateOrProvince",
+            "dataType": "string",
+            "lineageTag": "853a20f4-0423-40ad-974d-3bb9af497a92",
+            "sourceColumn": "circle",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "city",
+            "dataCategory": "City",
+            "dataType": "string",
+            "lineageTag": "acf949f0-c354-444a-af55-45f1ee1e23f2",
+            "sourceColumn": "city",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "city_tier",
+            "dataType": "string",
+            "lineageTag": "551f6362-0bb0-4217-9284-6aae76a860e0",
+            "sourceColumn": "city_tier",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "zone",
+            "dataType": "string",
+            "lineageTag": "5077805a-7148-41ac-ba50-eb9348fd51fa",
+            "sourceColumn": "zone",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "dataCategory": "Country",
+            "dataType": "string",
+            "lineageTag": "df84e5e6-f855-4f60-9af1-4558dd8fdaf3",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "0b67313a-9cb7-42bb-b725-eea69001af1a",
+        "partitions": [
+          {
+            "name": "dim_geography",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"dim_geography.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    Typed = Table.TransformColumnTypes(Promoted, {{\"geo_key\", type text}, {\"circle\", type text}, {\"city\", type text}, {\"city_tier\", type text}, {\"zone\", type text}, {\"country\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_plan",
+        "columns": [
+          {
+            "name": "plan_id",
+            "dataType": "string",
+            "lineageTag": "e225579f-0d76-4d1c-8a2c-876e32b54ba6",
+            "sourceColumn": "plan_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "plan_name",
+            "dataType": "string",
+            "lineageTag": "295f7df8-1306-4e10-b5c4-3ed53d4bffd7",
+            "sourceColumn": "plan_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "service_type",
+            "dataType": "string",
+            "lineageTag": "142301a6-cd85-45bd-8414-2894589abd7b",
+            "sourceColumn": "service_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "monthly_fee",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "2f0a12c9-7fb6-4e2a-9981-02f8118661d0",
+            "sourceColumn": "monthly_fee",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "data_gb_limit",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7918484d-d092-43a6-892a-7629819f6f88",
+            "sourceColumn": "data_gb_limit",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "voice_benefit",
+            "dataType": "string",
+            "lineageTag": "112f5c56-0429-4bac-a207-8a285dd24b47",
+            "sourceColumn": "voice_benefit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "plan_tier",
+            "dataType": "string",
+            "lineageTag": "2adcec2c-525d-4bfa-a39b-f1d041f13f9c",
+            "sourceColumn": "plan_tier",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "5171f58c-6c3b-4b63-a980-1c7b187f98b8",
+        "partitions": [
+          {
+            "name": "dim_plan",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"dim_plan.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    Typed = Table.TransformColumnTypes(Promoted, {{\"plan_id\", type text}, {\"plan_name\", type text}, {\"service_type\", type text}, {\"monthly_fee\", Currency.Type}, {\"data_gb_limit\", Int64.Type}, {\"voice_benefit\", type text}, {\"plan_tier\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fact_billing",
+        "columns": [
+          {
+            "name": "invoice_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "422e7c27-8580-4e5d-b624-c657d4d8ac6a",
+            "sourceColumn": "invoice_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "4eec5352-d396-42e7-bdc2-a1dbe0fc7a5d",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "plan_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "4c108c7f-00f6-4df1-9483-d25f74420c03",
+            "sourceColumn": "plan_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "bill_month",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd-mmm-yyyy",
+            "lineageTag": "dfc84986-9922-4b7c-8423-259a4575e1ce",
+            "sourceColumn": "bill_month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "amount_billed",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "159869f1-a30a-464c-9de2-89bf7151e0e8",
+            "sourceColumn": "amount_billed",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "amount_paid",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "f3e52c9a-ac82-4e3f-badc-380960861c4f",
+            "sourceColumn": "amount_paid",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "outstanding",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "0543d1e3-31d7-4221-8cfb-05560b7107d5",
+            "sourceColumn": "outstanding",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "payment_status",
+            "dataType": "string",
+            "lineageTag": "3a78c704-7a7c-40bd-ac02-15ce3b627695",
+            "sourceColumn": "payment_status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "days_late",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "05419f51-3b64-4d0a-a6f3-87cfecd0fea3",
+            "sourceColumn": "days_late",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "b063ba69-5752-4b36-b64c-fa0128f423a1",
+        "partitions": [
+          {
+            "name": "fact_billing",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"fact_billing.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    Typed = Table.TransformColumnTypes(Promoted, {{\"invoice_id\", type text}, {\"customer_id\", type text}, {\"plan_id\", type text}, {\"bill_month\", type date}, {\"amount_billed\", Currency.Type}, {\"amount_paid\", Currency.Type}, {\"outstanding\", Currency.Type}, {\"payment_status\", type text}, {\"days_late\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fact_usage",
+        "columns": [
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "c37f8076-715f-4d5c-b57a-fe0c86138703",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "usage_month",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd-mmm-yyyy",
+            "lineageTag": "4283b005-5eac-4c5a-ade0-51dbe9b4ddbe",
+            "sourceColumn": "usage_month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "data_used_gb",
+            "dataType": "double",
+            "lineageTag": "0e3080d6-69db-4085-b4ae-0934e5fcad15",
+            "sourceColumn": "data_used_gb",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "voice_minutes",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bbf0e2c6-eefb-427b-aeb6-938185250f8b",
+            "sourceColumn": "voice_minutes",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "call_drop_rate_pct",
+            "dataType": "double",
+            "lineageTag": "e58757ed-02e1-42ac-993a-e4baf095fc9d",
+            "sourceColumn": "call_drop_rate_pct",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "avg_speed_mbps",
+            "dataType": "double",
+            "lineageTag": "6baa7cfb-205a-4312-83d6-251c87b5387f",
+            "sourceColumn": "avg_speed_mbps",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "41aa0d3f-30d3-49a8-9da4-60f0c954e336",
+        "partitions": [
+          {
+            "name": "fact_usage",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"fact_usage.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    Typed = Table.TransformColumnTypes(Promoted, {{\"customer_id\", type text}, {\"usage_month\", type date}, {\"data_used_gb\", type number}, {\"voice_minutes\", Int64.Type}, {\"call_drop_rate_pct\", type number}, {\"avg_speed_mbps\", type number}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fact_tickets",
+        "columns": [
+          {
+            "name": "ticket_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "bc0a5282-87f2-48ec-9166-c2947963f640",
+            "sourceColumn": "ticket_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "3d3b5124-c553-45ea-9006-5209de13040c",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ticket_date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd-mmm-yyyy",
+            "lineageTag": "aefc5502-d7bd-4146-9c13-82f6d6cf056b",
+            "sourceColumn": "ticket_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "category",
+            "dataType": "string",
+            "lineageTag": "7e8cab4c-42b4-421f-ae62-c114a8d5308c",
+            "sourceColumn": "category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "channel",
+            "dataType": "string",
+            "lineageTag": "c24ff0aa-3d63-40fd-a970-77750c7134ef",
+            "sourceColumn": "channel",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "resolution_hours",
+            "dataType": "double",
+            "lineageTag": "104f00cf-372b-4a58-8cb8-c267d499e649",
+            "sourceColumn": "resolution_hours",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "resolved",
+            "dataType": "string",
+            "lineageTag": "428dba87-af89-4906-8a15-71f3022749d7",
+            "sourceColumn": "resolved",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "csat_score",
+            "dataType": "double",
+            "lineageTag": "121b829d-f00f-4224-9b10-45e7b71508aa",
+            "sourceColumn": "csat_score",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "resolved_flag",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c8474829-f60e-41af-a611-dcfa395fe95d",
+            "sourceColumn": "resolved_flag",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "3730c95e-e7e6-4904-ab6a-87aceb008e6b",
+        "partitions": [
+          {
+            "name": "fact_tickets",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"fact_tickets.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    Typed = Table.TransformColumnTypes(Promoted, {{\"ticket_id\", type text}, {\"customer_id\", type text}, {\"ticket_date\", type date}, {\"category\", type text}, {\"channel\", type text}, {\"resolution_hours\", type number}, {\"resolved\", type text}, {\"csat_score\", type number}, {\"resolved_flag\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fact_churn_predictions",
+        "columns": [
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "b04607fb-9830-4efb-9c04-8326db37f6ac",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "circle",
+            "dataType": "string",
+            "lineageTag": "4a9d1ec1-f2a7-4995-84ab-4bd1d4e74c43",
+            "sourceColumn": "circle",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "lineageTag": "3db3a35e-0994-47e5-91e0-1c3059f067a4",
+            "sourceColumn": "city",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "service_type",
+            "dataType": "string",
+            "lineageTag": "1f07533f-0813-4337-b939-864dee1385a0",
+            "sourceColumn": "service_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "plan_name",
+            "dataType": "string",
+            "lineageTag": "dd90f427-8189-4709-a517-03570a9c9fa8",
+            "sourceColumn": "plan_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "contract_type",
+            "dataType": "string",
+            "lineageTag": "84ad97ee-a17d-411e-83ae-9817a60654a5",
+            "sourceColumn": "contract_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tenure_months",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d6270631-8eee-41f4-ad27-50841601f91a",
+            "sourceColumn": "tenure_months",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "monthly_charges",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "2d9cfd37-d255-450f-b970-6010a48a6abf",
+            "sourceColumn": "monthly_charges",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "avg_drop_rate",
+            "dataType": "double",
+            "lineageTag": "9623d4e6-9b7b-4576-9f79-14735400d64a",
+            "sourceColumn": "avg_drop_rate",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "tickets_per_month",
+            "dataType": "double",
+            "lineageTag": "425abfd7-7fcd-49c7-b2ff-ae1bd8897a8d",
+            "sourceColumn": "tickets_per_month",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "avg_csat",
+            "dataType": "double",
+            "lineageTag": "cb9be4a9-0cb0-44d6-8892-cdfe8c33e491",
+            "sourceColumn": "avg_csat",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "late_payment_ratio",
+            "dataType": "double",
+            "lineageTag": "0e717f8c-3407-4b25-9e00-8b3a3776ed32",
+            "sourceColumn": "late_payment_ratio",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "churn_probability",
+            "dataType": "double",
+            "lineageTag": "52460777-d0ba-4186-bb55-05b87c9daae8",
+            "sourceColumn": "churn_probability",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "risk_tier",
+            "dataType": "string",
+            "lineageTag": "b3d86f72-70fa-421c-92ff-9a2bd5d25230",
+            "sortByColumn": "risk_tier_sort",
+            "sourceColumn": "risk_tier",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "annual_revenue",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "7f7d42e1-63b4-4c62-88fa-ecf07f7c56e7",
+            "sourceColumn": "annual_revenue",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "revenue_at_risk",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "d97b44f5-558b-4f7a-9b2f-15c8d99db5ff",
+            "sourceColumn": "revenue_at_risk",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "predicted_clv",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "5ec01492-e716-4b2e-979c-4ace8c55513c",
+            "sourceColumn": "predicted_clv",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "next_best_action",
+            "dataType": "string",
+            "lineageTag": "a80480c3-4116-4d93-b66d-0f43dc8da525",
+            "sourceColumn": "next_best_action",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "risk_tier_sort",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "1c93e30a-1d0a-41ff-a2a0-86184fcf0250",
+            "sourceColumn": "risk_tier_sort",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "04e6ebf5-30d9-40d9-beb4-ef61c787d4f5",
+        "partitions": [
+          {
+            "name": "fact_churn_predictions",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"fact_churn_predictions.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    Typed = Table.TransformColumnTypes(Promoted, {{\"customer_id\", type text}, {\"circle\", type text}, {\"city\", type text}, {\"service_type\", type text}, {\"plan_name\", type text}, {\"contract_type\", type text}, {\"tenure_months\", Int64.Type}, {\"monthly_charges\", Currency.Type}, {\"avg_drop_rate\", type number}, {\"tickets_per_month\", type number}, {\"avg_csat\", type number}, {\"late_payment_ratio\", type number}, {\"churn_probability\", type number}, {\"risk_tier\", type text}, {\"annual_revenue\", Currency.Type}, {\"revenue_at_risk\", Currency.Type}, {\"predicted_clv\", Currency.Type}, {\"next_best_action\", type text}}, \"en-US\"),",
+                "    Add_risk_tier_sort = Table.AddColumn(Typed, \"risk_tier_sort\", each if [risk_tier] = \"High\" then 1 else if [risk_tier] = \"Medium\" then 2 else 3, Int64.Type)",
+                "in",
+                "    Add_risk_tier_sort"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fact_monthly_kpis",
+        "columns": [
+          {
+            "name": "month",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd-mmm-yyyy",
+            "lineageTag": "7fa577ba-9865-412b-b50e-447e0d49970f",
+            "sourceColumn": "month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "opening_subscribers",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e6c7ae10-03e5-46c5-8e7f-bc8cf8d898f6",
+            "sourceColumn": "opening_subscribers",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "new_subscribers",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6be1a197-76f3-4bd0-b30e-3e519fb83a17",
+            "sourceColumn": "new_subscribers",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "churned_subscribers",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "651ea9a4-b821-4e1f-8865-2c7c4ed7d227",
+            "sourceColumn": "churned_subscribers",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "closing_subscribers",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "dbfa65b2-f2ff-4dfb-bf9a-142917cae255",
+            "sourceColumn": "closing_subscribers",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "churn_rate",
+            "dataType": "double",
+            "lineageTag": "51af9a0f-8ae1-4da0-bfd9-a706a8ff5aec",
+            "sourceColumn": "churn_rate",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "mrr",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "76d9e7c5-d54a-468c-9762-5b2e7956ebdc",
+            "sourceColumn": "mrr",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "collected",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "18bebfce-b61d-44f4-a404-4d5289e3ca07",
+            "sourceColumn": "collected",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "collection_efficiency",
+            "dataType": "double",
+            "lineageTag": "bf2b9718-2ece-424d-bbd3-6c18778609a2",
+            "sourceColumn": "collection_efficiency",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "late_payment_rate",
+            "dataType": "double",
+            "lineageTag": "f56c8396-e7a5-4044-891f-a715eabf8db4",
+            "sourceColumn": "late_payment_rate",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "billed_subscribers",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "63013065-6613-4587-8d2c-468bfd532b2e",
+            "sourceColumn": "billed_subscribers",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "churned_mrr",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "73f28d38-ed23-4b71-9154-f210e9fc4442",
+            "sourceColumn": "churned_mrr",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "new_mrr",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "35a695b9-44e7-4626-9233-7017a31cf107",
+            "sourceColumn": "new_mrr",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "arpu",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "a8e85666-1b13-491f-bf7a-088425d8e65a",
+            "sourceColumn": "arpu",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "mrr_growth_pct",
+            "dataType": "double",
+            "lineageTag": "9d7ceecc-3e84-4e09-8a5f-fd0ed1a88b71",
+            "sourceColumn": "mrr_growth_pct",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "net_subscriber_adds",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3cf92902-9d09-4671-aca8-93768a9e30ca",
+            "sourceColumn": "net_subscriber_adds",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "cumulative_revenue_lost",
+            "dataType": "decimal",
+            "formatString": "₹#,0",
+            "lineageTag": "536c41cd-3a3b-4a96-9207-1ad0cee0313a",
+            "sourceColumn": "cumulative_revenue_lost",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "2f997b8d-f0b5-4ad4-b72c-c21d9c980e2c",
+        "partitions": [
+          {
+            "name": "fact_monthly_kpis",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"fact_monthly_kpis.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    Typed = Table.TransformColumnTypes(Promoted, {{\"month\", type date}, {\"opening_subscribers\", Int64.Type}, {\"new_subscribers\", Int64.Type}, {\"churned_subscribers\", Int64.Type}, {\"closing_subscribers\", Int64.Type}, {\"churn_rate\", type number}, {\"mrr\", Currency.Type}, {\"collected\", Currency.Type}, {\"collection_efficiency\", type number}, {\"late_payment_rate\", type number}, {\"billed_subscribers\", Int64.Type}, {\"churned_mrr\", Currency.Type}, {\"new_mrr\", Currency.Type}, {\"arpu\", Currency.Type}, {\"mrr_growth_pct\", type number}, {\"net_subscriber_adds\", Int64.Type}, {\"cumulative_revenue_lost\", Currency.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Save Rate",
+        "columns": [
+          {
+            "name": "Save Rate",
+            "dataType": "double",
+            "formatString": "0%",
+            "lineageTag": "76c6acdb-11a9-4931-adeb-4a4b93f9bdc4",
+            "sourceColumn": "Save Rate",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "311c1056-264c-4fa6-b2c5-d75a106e391e",
+        "measures": [
+          {
+            "name": "Save Rate Value",
+            "expression": "SELECTEDVALUE ( 'Save Rate'[Save Rate], 0.3 )",
+            "formatString": "0%",
+            "lineageTag": "fea699bf-1664-4c91-8ef9-ba05b4284d2f"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Save Rate",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromList(List.Transform({2..12}, each _ * 0.05), Splitter.SplitByNothing(), {\"Save Rate\"}),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"Save Rate\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Offer Cost",
+        "columns": [
+          {
+            "name": "Offer Cost",
+            "dataType": "double",
+            "formatString": "₹#,0",
+            "lineageTag": "182ed78a-7b44-411e-bb01-aab3ad9b65df",
+            "sourceColumn": "Offer Cost",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "278a30ec-9ff1-4f87-a9e9-7ce9816501a0",
+        "measures": [
+          {
+            "name": "Offer Cost Value",
+            "expression": "SELECTEDVALUE ( 'Offer Cost'[Offer Cost], 300 )",
+            "formatString": "₹#,0",
+            "lineageTag": "45d91cb5-801d-47cc-bb66-acc8a46e62e4"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Offer Cost",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromList(List.Transform({2..16}, each _ * 50), Splitter.SplitByNothing(), {\"Offer Cost\"}),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"Offer Cost\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "_Measures",
+        "columns": [
+          {
+            "name": "Dummy",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "71a482eb-49a1-42fd-a0f4-840153ce53b1",
+            "sourceColumn": "Dummy",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "fcc9cab1-ba8a-45a4-b8eb-6d17cd303305",
+        "measures": [
+          {
+            "name": "Total Customers",
+            "displayFolder": "01 Customers",
+            "expression": "DISTINCTCOUNT ( dim_customer[customer_id] )",
+            "formatString": "#,0",
+            "lineageTag": "875dbc36-962f-4b4f-8f2c-c44b7dcaf36d"
+          },
+          {
+            "name": "Churned Customers",
+            "displayFolder": "01 Customers",
+            "expression": "CALCULATE ( [Total Customers], dim_customer[churn_flag] = 1 )",
+            "formatString": "#,0",
+            "lineageTag": "566fd924-1aeb-4a25-a350-b297687f761c"
+          },
+          {
+            "name": "Active Customers",
+            "displayFolder": "01 Customers",
+            "expression": "CALCULATE ( [Total Customers], dim_customer[churn_flag] = 0 )",
+            "formatString": "#,0",
+            "lineageTag": "3dc886a1-8f02-435a-9537-7d3f3f064b61"
+          },
+          {
+            "name": "Churn Rate %",
+            "displayFolder": "01 Customers",
+            "expression": "DIVIDE ( [Churned Customers], [Total Customers] )",
+            "formatString": "0.0%",
+            "lineageTag": "74c26db3-480c-44d6-84c6-50782ce0daf2"
+          },
+          {
+            "name": "Retention Rate %",
+            "displayFolder": "01 Customers",
+            "expression": "1 - [Churn Rate %]",
+            "formatString": "0.0%",
+            "lineageTag": "b8a97c10-350b-48b0-897e-3838baa08b4c"
+          },
+          {
+            "name": "Avg Tenure (Months)",
+            "displayFolder": "01 Customers",
+            "expression": "AVERAGE ( dim_customer[tenure_months] )",
+            "formatString": "0.0",
+            "lineageTag": "c4a88964-b268-4f99-9669-e5d365644eff"
+          },
+          {
+            "name": "Churn Lift vs Avg",
+            "displayFolder": "01 Customers",
+            "expression": [
+              "    VAR _all = CALCULATE ( [Churn Rate %], ALLSELECTED ( dim_customer ) )",
+              "    RETURN DIVIDE ( [Churn Rate %], _all )"
+            ],
+            "formatString": "0.00",
+            "lineageTag": "d6a82411-4d17-4a10-8f61-a1bf9dafff38"
+          },
+          {
+            "name": "New Subscribers",
+            "displayFolder": "02 Subscriber Movement",
+            "expression": [
+              "    CALCULATE (",
+              "        COUNTROWS ( dim_customer ),",
+              "        USERELATIONSHIP ( dim_customer[join_date], dim_date[date] )",
+              "    )"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "8cf20887-ece5-4cb5-8860-cf21105d34ef"
+          },
+          {
+            "name": "Churned in Period",
+            "displayFolder": "02 Subscriber Movement",
+            "expression": [
+              "    CALCULATE (",
+              "        COUNTROWS ( dim_customer ),",
+              "        USERELATIONSHIP ( dim_customer[churn_date], dim_date[date] ),",
+              "        dim_customer[churn_flag] = 1",
+              "    )"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "eecc5dad-16be-4984-a498-e6fdddf60193"
+          },
+          {
+            "name": "Net Adds",
+            "displayFolder": "02 Subscriber Movement",
+            "expression": "[New Subscribers] - [Churned in Period]",
+            "formatString": "#,0",
+            "lineageTag": "8c4f5732-f727-4761-827a-24652f3275e1"
+          },
+          {
+            "name": "Opening Subscribers",
+            "displayFolder": "02 Subscriber Movement",
+            "expression": [
+              "    VAR _start = MIN ( dim_date[date] )",
+              "    RETURN",
+              "        CALCULATE (",
+              "            COUNTROWS ( dim_customer ),",
+              "            REMOVEFILTERS ( dim_date ),",
+              "            dim_customer[join_date] < _start,",
+              "            ISBLANK ( dim_customer[churn_date] ) || dim_customer[churn_date] >= _start",
+              "        )"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "ef4ae52d-237b-4cee-bc36-1b956cf0087f"
+          },
+          {
+            "name": "Closing Subscribers",
+            "displayFolder": "02 Subscriber Movement",
+            "expression": "[Opening Subscribers] + [New Subscribers] - [Churned in Period]",
+            "formatString": "#,0",
+            "lineageTag": "e18dd5bc-df8e-4ed7-b852-a3f1f0f7cf40"
+          },
+          {
+            "name": "Monthly Churn Rate %",
+            "displayFolder": "02 Subscriber Movement",
+            "expression": "DIVIDE ( [Churned in Period], [Opening Subscribers] )",
+            "formatString": "0.0%",
+            "lineageTag": "73fd5bf2-f04c-472e-a82a-69343bb7e0d1"
+          },
+          {
+            "name": "Avg Monthly Churn Rate %",
+            "displayFolder": "02 Subscriber Movement",
+            "expression": "AVERAGEX ( VALUES ( dim_date[year_month] ), [Monthly Churn Rate %] )",
+            "formatString": "0.0%",
+            "lineageTag": "cf3e23f5-4fe5-46bb-9b45-2e302391c3fc"
+          },
+          {
+            "name": "Total Revenue",
+            "displayFolder": "03 Revenue",
+            "expression": "SUM ( fact_billing[amount_billed] )",
+            "formatString": "₹#,0",
+            "lineageTag": "b3eaccf3-813d-4734-af60-e57cadca5f60"
+          },
+          {
+            "name": "Revenue Collected",
+            "displayFolder": "03 Revenue",
+            "expression": "SUM ( fact_billing[amount_paid] )",
+            "formatString": "₹#,0",
+            "lineageTag": "8dfbe484-04cb-44d0-a332-4746f5b7b142"
+          },
+          {
+            "name": "Outstanding Amount",
+            "displayFolder": "03 Revenue",
+            "expression": "SUM ( fact_billing[outstanding] )",
+            "formatString": "₹#,0",
+            "lineageTag": "28896633-214e-42dc-b6b3-43e09e8c6d45"
+          },
+          {
+            "name": "Collection Efficiency %",
+            "displayFolder": "03 Revenue",
+            "expression": "DIVIDE ( [Revenue Collected], [Total Revenue] )",
+            "formatString": "0.0%",
+            "lineageTag": "d33960fa-352d-41bf-b659-25108617bf2b"
+          },
+          {
+            "name": "Billed Subscribers",
+            "displayFolder": "03 Revenue",
+            "expression": "DISTINCTCOUNT ( fact_billing[customer_id] )",
+            "formatString": "#,0",
+            "lineageTag": "f794d876-874c-41dd-be68-a11004dbac0d"
+          },
+          {
+            "name": "ARPU",
+            "displayFolder": "03 Revenue",
+            "expression": [
+              "    DIVIDE (",
+              "        [Total Revenue],",
+              "        SUMX ( VALUES ( dim_date[year_month] ), CALCULATE ( [Billed Subscribers] ) )",
+              "    )"
+            ],
+            "formatString": "₹#,0",
+            "lineageTag": "2ea362ae-8b35-4bcd-bc9f-d010c716ff9e"
+          },
+          {
+            "name": "Avg Monthly Revenue (MRR)",
+            "displayFolder": "03 Revenue",
+            "expression": "AVERAGEX ( VALUES ( dim_date[year_month] ), [Total Revenue] )",
+            "formatString": "₹#,0",
+            "lineageTag": "63482265-d76c-40e0-97a5-f0f72f921bb1"
+          },
+          {
+            "name": "Revenue PM",
+            "displayFolder": "03 Revenue",
+            "expression": "CALCULATE ( [Total Revenue], DATEADD ( dim_date[date], -1, MONTH ) )",
+            "formatString": "₹#,0",
+            "lineageTag": "08b5987a-adca-466a-83c1-1747ce51f7f5"
+          },
+          {
+            "name": "Revenue MoM %",
+            "displayFolder": "03 Revenue",
+            "expression": "DIVIDE ( [Total Revenue] - [Revenue PM], [Revenue PM] )",
+            "formatString": "0.0%",
+            "lineageTag": "573fec55-ab37-4fee-b920-23dc272fb8cf"
+          },
+          {
+            "name": "Revenue PY",
+            "displayFolder": "03 Revenue",
+            "expression": "CALCULATE ( [Total Revenue], SAMEPERIODLASTYEAR ( dim_date[date] ) )",
+            "formatString": "₹#,0",
+            "lineageTag": "a7f13c0d-6e03-45b0-9ebc-c865629bdbcf"
+          },
+          {
+            "name": "Revenue YoY %",
+            "displayFolder": "03 Revenue",
+            "expression": "DIVIDE ( [Total Revenue] - [Revenue PY], [Revenue PY] )",
+            "formatString": "0.0%",
+            "lineageTag": "8079e485-3061-4004-8ff3-5f6d20d42913"
+          },
+          {
+            "name": "Revenue FYTD",
+            "displayFolder": "03 Revenue",
+            "expression": "TOTALYTD ( [Total Revenue], dim_date[date], \"3/31\" )",
+            "formatString": "₹#,0",
+            "lineageTag": "eb75415e-8cd1-432f-83cb-45bde23efae2"
+          },
+          {
+            "name": "Revenue Running Total",
+            "displayFolder": "03 Revenue",
+            "expression": [
+              "    CALCULATE (",
+              "        [Total Revenue],",
+              "        FILTER ( ALL ( dim_date[date] ), dim_date[date] <= MAX ( dim_date[date] ) )",
+              "    )"
+            ],
+            "formatString": "₹#,0",
+            "lineageTag": "ee650f92-f0f9-4692-9b95-95d16e6d5c1b"
+          },
+          {
+            "name": "Late Payment Rate %",
+            "displayFolder": "03 Revenue",
+            "expression": [
+              "    DIVIDE (",
+              "        CALCULATE ( COUNTROWS ( fact_billing ), fact_billing[payment_status] = \"Paid Late\" ),",
+              "        COUNTROWS ( fact_billing )",
+              "    )"
+            ],
+            "formatString": "0.0%",
+            "lineageTag": "36d26260-83ca-49c8-96fb-c099cce59904"
+          },
+          {
+            "name": "MRR Lost to Churn",
+            "displayFolder": "04 Revenue Leakage",
+            "expression": [
+              "    CALCULATE (",
+              "        SUM ( dim_customer[monthly_charges] ),",
+              "        USERELATIONSHIP ( dim_customer[churn_date], dim_date[date] ),",
+              "        dim_customer[churn_flag] = 1",
+              "    )"
+            ],
+            "formatString": "₹#,0",
+            "lineageTag": "86d46658-c127-4c6a-accf-f72897ea6db7"
+          },
+          {
+            "name": "Annualised Revenue Lost",
+            "displayFolder": "04 Revenue Leakage",
+            "expression": "[MRR Lost to Churn] * 12",
+            "formatString": "₹#,0",
+            "lineageTag": "5f8d947b-bac8-4af1-a8e3-3c58ce2c088b"
+          },
+          {
+            "name": "Cumulative MRR Lost",
+            "displayFolder": "04 Revenue Leakage",
+            "expression": [
+              "    CALCULATE (",
+              "        [MRR Lost to Churn],",
+              "        FILTER ( ALL ( dim_date[date] ), dim_date[date] <= MAX ( dim_date[date] ) )",
+              "    )"
+            ],
+            "formatString": "₹#,0",
+            "lineageTag": "fdfddd07-535c-4872-bde4-7e5fc6ac4ea7"
+          },
+          {
+            "name": "New MRR",
+            "displayFolder": "04 Revenue Leakage",
+            "expression": [
+              "    CALCULATE (",
+              "        SUM ( dim_customer[monthly_charges] ),",
+              "        USERELATIONSHIP ( dim_customer[join_date], dim_date[date] )",
+              "    )"
+            ],
+            "formatString": "₹#,0",
+            "lineageTag": "081a2767-12c9-4598-8311-ed52d9205f8c"
+          },
+          {
+            "name": "Net New MRR",
+            "displayFolder": "04 Revenue Leakage",
+            "expression": "[New MRR] - [MRR Lost to Churn]",
+            "formatString": "₹#,0",
+            "lineageTag": "22a59521-f757-4779-9975-66a1d38a6bf4"
+          },
+          {
+            "name": "Top 20% Revenue Share",
+            "displayFolder": "04 Revenue Leakage",
+            "expression": [
+              "    VAR _n = ROUNDUP ( [Billed Subscribers] * 0.2, 0 )",
+              "    VAR _top =",
+              "        TOPN ( _n, VALUES ( fact_billing[customer_id] ), CALCULATE ( [Total Revenue] ), DESC )",
+              "    RETURN DIVIDE ( CALCULATE ( [Total Revenue], _top ), [Total Revenue] )"
+            ],
+            "formatString": "0.0%",
+            "lineageTag": "966b9b18-d216-43cf-b3e2-96dac6aeab8a"
+          },
+          {
+            "name": "Revenue at Risk",
+            "displayFolder": "05 Predictive Risk",
+            "expression": "SUM ( fact_churn_predictions[revenue_at_risk] )",
+            "formatString": "₹#,0",
+            "lineageTag": "d10192a2-399b-42cf-bef7-08dfb7f96423"
+          },
+          {
+            "name": "Scored Customers",
+            "displayFolder": "05 Predictive Risk",
+            "expression": "COUNTROWS ( fact_churn_predictions )",
+            "formatString": "#,0",
+            "lineageTag": "8c77c208-5277-443c-819a-11cbbb227974"
+          },
+          {
+            "name": "High Risk Customers",
+            "displayFolder": "05 Predictive Risk",
+            "expression": "CALCULATE ( [Scored Customers], fact_churn_predictions[risk_tier] = \"High\" )",
+            "formatString": "#,0",
+            "lineageTag": "b494cb9c-a1da-4267-9209-915934107a00"
+          },
+          {
+            "name": "Medium Risk Customers",
+            "displayFolder": "05 Predictive Risk",
+            "expression": "CALCULATE ( [Scored Customers], fact_churn_predictions[risk_tier] = \"Medium\" )",
+            "formatString": "#,0",
+            "lineageTag": "172a7004-9362-4143-8d99-ecccf726c9b0"
+          },
+          {
+            "name": "High Risk Revenue",
+            "displayFolder": "05 Predictive Risk",
+            "expression": "CALCULATE ( [Revenue at Risk], fact_churn_predictions[risk_tier] = \"High\" )",
+            "formatString": "₹#,0",
+            "lineageTag": "33b9da2d-aa8b-4d94-8e2d-fd9c9f3bfae1"
+          },
+          {
+            "name": "Avg Churn Probability",
+            "displayFolder": "05 Predictive Risk",
+            "expression": "AVERAGE ( fact_churn_predictions[churn_probability] )",
+            "formatString": "0.0%",
+            "lineageTag": "220465e6-2a6b-40a3-a5c1-f976bc12b9d9"
+          },
+          {
+            "name": "Avg Predicted CLV",
+            "displayFolder": "05 Predictive Risk",
+            "expression": "AVERAGE ( fact_churn_predictions[predicted_clv] )",
+            "formatString": "₹#,0",
+            "lineageTag": "41360eb9-8e49-4adf-b5d3-2eb5daad6dd9"
+          },
+          {
+            "name": "Revenue at Risk % of Annual",
+            "displayFolder": "05 Predictive Risk",
+            "expression": "DIVIDE ( [Revenue at Risk], SUM ( fact_churn_predictions[annual_revenue] ) )",
+            "formatString": "0.0%",
+            "lineageTag": "5d813268-71ad-48cb-b23e-cacb22a09207"
+          },
+          {
+            "name": "Targeted Customers",
+            "displayFolder": "06 Retention Campaign ROI",
+            "expression": "CALCULATE ( [Scored Customers], fact_churn_predictions[risk_tier] IN { \"High\", \"Medium\" } )",
+            "formatString": "#,0",
+            "lineageTag": "31e55b43-9a4e-4bf6-8df2-3242bb6933a9"
+          },
+          {
+            "name": "Campaign Cost",
+            "displayFolder": "06 Retention Campaign ROI",
+            "expression": "[Targeted Customers] * 'Offer Cost'[Offer Cost Value]",
+            "formatString": "₹#,0",
+            "lineageTag": "38e0e0c0-a1e4-4aeb-adb2-372402eed7d6"
+          },
+          {
+            "name": "Revenue Saved (Gross Margin)",
+            "displayFolder": "06 Retention Campaign ROI",
+            "expression": [
+              "    CALCULATE ( [Revenue at Risk], fact_churn_predictions[risk_tier] IN { \"High\", \"Medium\" } )",
+              "        * 'Save Rate'[Save Rate Value] * 0.40"
+            ],
+            "formatString": "₹#,0",
+            "lineageTag": "4640c5e1-dc4b-46f2-9728-d5a450768df1"
+          },
+          {
+            "name": "Campaign Net Benefit",
+            "displayFolder": "06 Retention Campaign ROI",
+            "expression": "[Revenue Saved (Gross Margin)] - [Campaign Cost]",
+            "formatString": "₹#,0",
+            "lineageTag": "cb7eab40-c388-4a68-aec6-936a08e4c948"
+          },
+          {
+            "name": "Campaign ROI %",
+            "displayFolder": "06 Retention Campaign ROI",
+            "expression": "DIVIDE ( [Campaign Net Benefit], [Campaign Cost] )",
+            "formatString": "0.0%",
+            "lineageTag": "55da44bb-ba1b-4221-89aa-aeaa8f728cc2"
+          },
+          {
+            "name": "Total Tickets",
+            "displayFolder": "07 Customer Experience & Network",
+            "expression": "COUNTROWS ( fact_tickets )",
+            "formatString": "#,0",
+            "lineageTag": "5eff3a3f-7c20-4576-9158-5d9573829c7b"
+          },
+          {
+            "name": "Avg CSAT",
+            "displayFolder": "07 Customer Experience & Network",
+            "expression": "AVERAGE ( fact_tickets[csat_score] )",
+            "formatString": "0.00",
+            "lineageTag": "33dba3d3-c58d-4164-bfae-998d7f1f4198"
+          },
+          {
+            "name": "Avg Resolution Hours",
+            "displayFolder": "07 Customer Experience & Network",
+            "expression": "AVERAGE ( fact_tickets[resolution_hours] )",
+            "formatString": "0.0",
+            "lineageTag": "191592c6-5795-4fd9-99e1-8054b8a7ddf1"
+          },
+          {
+            "name": "Resolution Rate %",
+            "displayFolder": "07 Customer Experience & Network",
+            "expression": "DIVIDE ( SUM ( fact_tickets[resolved_flag] ), [Total Tickets] )",
+            "formatString": "0.0%",
+            "lineageTag": "a1d64470-f057-4ab4-b181-f9b15637d60f"
+          },
+          {
+            "name": "Tickets per 100 Customers",
+            "displayFolder": "07 Customer Experience & Network",
+            "expression": "DIVIDE ( [Total Tickets], [Billed Subscribers] ) * 100",
+            "formatString": "0.0",
+            "lineageTag": "5faa40dc-4d10-44d1-832c-1a64b391d0d3"
+          },
+          {
+            "name": "Network Ticket Share %",
+            "displayFolder": "07 Customer Experience & Network",
+            "expression": [
+              "    DIVIDE (",
+              "        CALCULATE ( [Total Tickets],",
+              "            fact_tickets[category] IN { \"Network / Coverage\", \"Slow Data Speed\", \"Broadband Outage\" } ),",
+              "        [Total Tickets]",
+              "    )"
+            ],
+            "formatString": "0.0%",
+            "lineageTag": "35a3bf46-4017-4d94-b86c-1ab3bd775ff3"
+          },
+          {
+            "name": "Avg Call Drop Rate %",
+            "displayFolder": "07 Customer Experience & Network",
+            "expression": "AVERAGE ( fact_usage[call_drop_rate_pct] ) / 100",
+            "formatString": "0.0%",
+            "lineageTag": "ebf16386-ea42-46a3-ab56-cb36959b4b57"
+          },
+          {
+            "name": "Avg Speed (Mbps)",
+            "displayFolder": "07 Customer Experience & Network",
+            "expression": "AVERAGE ( fact_usage[avg_speed_mbps] )",
+            "formatString": "0.0",
+            "lineageTag": "5281c58d-9e24-43c9-a422-3fc68f526a73"
+          },
+          {
+            "name": "Avg Data per User (GB)",
+            "displayFolder": "07 Customer Experience & Network",
+            "expression": "AVERAGE ( fact_usage[data_used_gb] )",
+            "formatString": "0.0",
+            "lineageTag": "87612a69-ab36-442b-bff1-5e4b48e5682c"
+          },
+          {
+            "name": "Title Executive",
+            "displayFolder": "08 UX helpers - dynamic titles & conditional colours",
+            "expression": [
+              "    \"Telecom Performance  |  \"",
+              "        & IF ( ISFILTERED ( dim_geography[circle] ),",
+              "               CONCATENATEX ( VALUES ( dim_geography[circle] ), dim_geography[circle], \", \" ),",
+              "               \"All Circles\" )",
+              "        & \"  |  \" & FORMAT ( MIN ( dim_date[date] ), \"MMM-yy\" ) & \" to \" & FORMAT ( MAX ( dim_date[date] ), \"MMM-yy\" )"
+            ],
+            "lineageTag": "166a5941-3347-46ae-98e2-55a025206646"
+          },
+          {
+            "name": "Churn Colour",
+            "displayFolder": "08 UX helpers - dynamic titles & conditional colours",
+            "expression": [
+              "    SWITCH ( TRUE (),",
+              "        [Churn Lift vs Avg] >= 1.3, \"#E34948\",",
+              "        [Churn Lift vs Avg] >= 1.0, \"#EDA100\",",
+              "        \"#1BAF7A\" )"
+            ],
+            "lineageTag": "a18bf935-2651-4238-a4da-8733c8df53dd"
+          },
+          {
+            "name": "KPI Revenue Arrow",
+            "displayFolder": "08 UX helpers - dynamic titles & conditional colours",
+            "expression": "IF ( [Revenue MoM %] >= 0, \"▲ \", \"▼ \" ) & FORMAT ( ABS ( [Revenue MoM %] ), \"0.0%\" ) & \" MoM\"",
+            "lineageTag": "2cf15b50-7fbd-4b1a-9262-6d367977c462"
+          },
+          {
+            "name": "Last Refresh",
+            "displayFolder": "08 UX helpers - dynamic titles & conditional colours",
+            "expression": "\"Data as of \" & FORMAT ( MAX ( fact_billing[bill_month] ), \"MMM yyyy\" )",
+            "lineageTag": "2484e8ca-a96e-49cf-8ac6-37d0474bdeb1"
+          },
+          {
+            "name": "Customer Plan",
+            "displayFolder": "09 Customer 360",
+            "expression": "SELECTEDVALUE ( dim_customer[plan_id], \"Select a customer\" )",
+            "lineageTag": "b9cda4fb-6058-4ee0-ae71-12fe3a00cd8b"
+          },
+          {
+            "name": "Customer Contract",
+            "displayFolder": "09 Customer 360",
+            "expression": "SELECTEDVALUE ( dim_customer[contract_type], \"-\" )",
+            "lineageTag": "2dea30c5-cd66-47f6-a70d-806119e23050"
+          },
+          {
+            "name": "Customer Tenure (M)",
+            "displayFolder": "09 Customer 360",
+            "expression": "IF ( HASONEVALUE ( dim_customer[customer_id] ), MAX ( dim_customer[tenure_months] ) )",
+            "formatString": "0",
+            "lineageTag": "3d25e478-4d76-4c1c-abee-8602ef144179"
+          },
+          {
+            "name": "Customer Monthly Charge",
+            "displayFolder": "09 Customer 360",
+            "expression": "IF ( HASONEVALUE ( dim_customer[customer_id] ), MAX ( dim_customer[monthly_charges] ) )",
+            "formatString": "₹#,0",
+            "lineageTag": "293f5502-a0bb-47f0-8113-ed6b7ec9be2f"
+          },
+          {
+            "name": "Customer Churn Probability",
+            "displayFolder": "09 Customer 360",
+            "expression": "IF ( HASONEVALUE ( dim_customer[customer_id] ), MAX ( fact_churn_predictions[churn_probability] ) )",
+            "formatString": "0.0%",
+            "lineageTag": "e47474b5-39e5-4c33-b166-beaa96c6687e"
+          },
+          {
+            "name": "Customer Risk Tier",
+            "displayFolder": "09 Customer 360",
+            "expression": "IF ( HASONEVALUE ( dim_customer[customer_id] ), COALESCE ( MAX ( fact_churn_predictions[risk_tier] ), \"Already churned\" ) )",
+            "lineageTag": "6c930e62-7205-4c73-a7c7-f7fe2c444787"
+          },
+          {
+            "name": "Customer Next Action",
+            "displayFolder": "09 Customer 360",
+            "expression": "IF ( HASONEVALUE ( dim_customer[customer_id] ), COALESCE ( MAX ( fact_churn_predictions[next_best_action] ), \"-\" ) )",
+            "lineageTag": "6cd7e1b0-5fa8-433f-9de9-86fba21c7010"
+          },
+          {
+            "name": "Customer Status",
+            "displayFolder": "09 Customer 360",
+            "expression": "SELECTEDVALUE ( dim_customer[customer_status], \"-\" )",
+            "lineageTag": "8c9e97c6-3855-420a-b093-15afd2dc6621"
+          },
+          {
+            "name": "Total Data Used (GB)",
+            "displayFolder": "09 Customer 360",
+            "expression": "SUM ( fact_usage[data_used_gb] )",
+            "formatString": "#,0.0",
+            "lineageTag": "f505e243-ecd6-4cdd-9287-ababbf26d32a"
+          },
+          {
+            "name": "Avg Monthly Charge",
+            "displayFolder": "09 Customer 360",
+            "expression": "AVERAGE ( dim_customer[monthly_charges] )",
+            "formatString": "₹#,0",
+            "lineageTag": "fa524fea-eef3-4f74-b55c-0850fb91ce64"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_Measures",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = #table(type table [Dummy = text], {})",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+circle,priority,customer_id,plan_name,contract_type,monthly_charges,churn_probability,revenue_at_risk,next_best_action
+Delhi NCR,1,CUST104287,Postpaid Premium,24 Month,1847.0,0.8362,18533.54,Plan Right-sizing
+Delhi NCR,2,CUST107938,Fiber 1 Gbps,Month-to-Month,1697.0,0.8698,17712.61,Priority Care Callback
+Delhi NCR,3,CUST104792,Postpaid Premium,Month-to-Month,1598.0,0.7518,14416.52,Lock-in Offer: 12M Contract @10% Off
+Gujarat,1,CUST101524,Fiber 1 Gbps,Month-to-Month,2045.0,0.906,22233.24,Lock-in Offer: 12M Contract @10% Off
+Gujarat,2,CUST100335,Postpaid Premium,Month-to-Month,1697.0,0.8715,17747.23,Lock-in Offer: 12M Contract @10% Off
+Gujarat,3,CUST104559,Postpaid Premium,Month-to-Month,1996.0,0.6326,15152.04,Lock-in Offer: 12M Contract @10% Off
+Karnataka,1,CUST102158,Fiber 1 Gbps,Month-to-Month,1648.0,0.9751,19283.58,Priority Care Callback
+Karnataka,2,CUST103816,Postpaid Premium,Month-to-Month,1648.0,0.7831,15486.59,Lock-in Offer: 12M Contract @10% Off
+Karnataka,3,CUST103294,Postpaid Premium,12 Month,1897.0,0.6591,15003.75,Plan Right-sizing
+Maharashtra,1,CUST104215,Postpaid Premium,Month-to-Month,1697.0,0.8201,16700.52,Priority Care Callback
+Maharashtra,2,CUST104198,Fiber 1 Gbps,Month-to-Month,1598.0,0.8159,15645.7,Lock-in Offer: 12M Contract @10% Off
+Maharashtra,3,CUST106180,Fiber 300 Mbps,Month-to-Month,1297.0,0.9806,15262.06,Network Escalation + Data Bonus
+Tamil Nadu,1,CUST102817,Postpaid Premium,Month-to-Month,1648.0,0.9191,18176.12,Lock-in Offer: 12M Contract @10% Off
+Tamil Nadu,2,CUST105221,Fiber 300 Mbps,Month-to-Month,1397.0,0.8494,14239.34,Priority Care Callback
+Tamil Nadu,3,CUST107190,Fiber 1 Gbps,Month-to-Month,1648.0,0.6758,13364.62,Lock-in Offer: 12M Contract @10% Off
+Telangana,1,CUST102655,Postpaid Premium,Month-to-Month,1499.0,0.7435,13374.08,Network Escalation + Data Bonus
+Telangana,2,CUST101084,Fiber 300 Mbps,12 Month,1397.0,0.6592,11050.83,Plan Right-sizing
+Telangana,3,CUST100757,Postpaid Family (3 SIM),Month-to-Month,1148.0,0.6857,9446.2,Network Escalation + Data Bonus
+Uttar Pradesh,1,CUST102451,Postpaid Premium,Month-to-Month,2045.0,0.9247,22692.14,Network Escalation + Data Bonus
+Uttar Pradesh,2,CUST106232,Postpaid Premium,12 Month,1946.0,0.8072,18849.73,Network Escalation + Data Bonus
+Uttar Pradesh,3,CUST105347,Fiber 1 Gbps,Month-to-Month,1548.0,0.9146,16989.61,Lock-in Offer: 12M Contract @10% Off
+West Bengal,1,CUST100865,Fiber 1 Gbps,Month-to-Month,1897.0,0.8815,20066.47,Network Escalation + Data Bonus
+West Bengal,2,CUST106550,Postpaid Premium,Month-to-Month,1648.0,0.8661,17127.99,Network Escalation + Data Bonus
+West Bengal,3,CUST105900,Postpaid Premium,24 Month,1612.15,0.8392,16235.0,Plan Right-sizing

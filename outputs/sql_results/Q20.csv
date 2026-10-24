@@ -1,0 +1,98 @@
+customer_id,circle,service_type,monthly_charges,late_invoices_6m,avg_days_late
+CUST104604,Gujarat,Prepaid Mobile,548.0,4,25.0
+CUST100119,Gujarat,Prepaid Mobile,448.0,4,33.3
+CUST106291,Telangana,Prepaid Mobile,448.0,4,15.3
+CUST102477,Maharashtra,Prepaid Mobile,399.0,4,32.5
+CUST107518,Karnataka,Prepaid Mobile,399.0,4,27.8
+CUST103013,Gujarat,Prepaid Mobile,299.0,4,23.3
+CUST103886,Telangana,Prepaid Mobile,299.0,4,30.5
+CUST105346,Uttar Pradesh,Prepaid Mobile,299.0,4,25.5
+CUST106172,Karnataka,Prepaid Mobile,299.0,4,19.0
+CUST106823,Maharashtra,Prepaid Mobile,299.0,4,22.0
+CUST102414,Karnataka,Prepaid Mobile,199.0,4,19.5
+CUST106489,Telangana,Postpaid Mobile,1648.0,3,14.7
+CUST101939,Maharashtra,Postpaid Mobile,1569.95,3,20.7
+CUST104505,Karnataka,Postpaid Mobile,1484.95,3,26.3
+CUST104882,Tamil Nadu,Fiber Broadband,1397.0,3,21.7
+CUST106288,Delhi NCR,Postpaid Mobile,1232.15,3,33.0
+CUST103675,West Bengal,Postpaid Mobile,1197.0,3,10.3
+CUST106704,Karnataka,Fiber Broadband,1197.0,3,14.3
+CUST103007,Maharashtra,Fiber Broadband,999.0,3,35.0
+CUST103460,Karnataka,Fiber Broadband,947.0,3,31.3
+CUST101341,Uttar Pradesh,Fiber Broadband,899.1,3,20.7
+CUST101132,Maharashtra,Fiber Broadband,897.0,3,27.7
+CUST105015,Delhi NCR,Fiber Broadband,890.8,3,23.0
+CUST102635,Karnataka,Fiber Broadband,848.0,3,19.7
+CUST103498,Karnataka,Postpaid Mobile,847.0,3,14.0
+CUST103421,Delhi NCR,Fiber Broadband,805.6,3,13.0
+CUST105809,Uttar Pradesh,Postpaid Mobile,804.65,3,27.3
+CUST104394,Karnataka,Prepaid Mobile,797.0,3,29.3
+CUST101754,Delhi NCR,Postpaid Mobile,748.0,3,28.0
+CUST104273,West Bengal,Postpaid Mobile,748.0,3,27.0
+CUST104876,Delhi NCR,Postpaid Mobile,748.0,3,26.3
+CUST106418,West Bengal,Prepaid Mobile,748.0,3,36.0
+CUST106210,Maharashtra,Fiber Broadband,699.0,3,22.0
+CUST104380,Tamil Nadu,Postpaid Mobile,698.0,3,29.7
+CUST100085,Maharashtra,Postpaid Mobile,673.2,3,23.7
+CUST105739,Karnataka,Postpaid Mobile,635.8,3,21.7
+CUST102024,Karnataka,Fiber Broadband,629.1,3,29.0
+CUST102417,Tamil Nadu,Prepaid Mobile,599.0,3,9.7
+CUST101587,Tamil Nadu,Postpaid Mobile,597.0,3,19.3
+CUST100549,Karnataka,Prepaid Mobile,548.0,3,25.3
+CUST107704,Karnataka,Prepaid Mobile,548.0,3,15.0
+CUST104338,Tamil Nadu,Prepaid Mobile,448.0,3,30.0
+CUST104372,Tamil Nadu,Prepaid Mobile,448.0,3,34.0
+CUST104924,Karnataka,Prepaid Mobile,448.0,3,19.7
+CUST105432,Gujarat,Prepaid Mobile,448.0,3,17.7
+CUST107324,Uttar Pradesh,Prepaid Mobile,448.0,3,33.7
+CUST107504,Tamil Nadu,Prepaid Mobile,448.0,3,20.3
+CUST107541,Karnataka,Prepaid Mobile,448.0,3,30.7
+CUST107621,Uttar Pradesh,Prepaid Mobile,448.0,3,22.0
+CUST100149,Maharashtra,Prepaid Mobile,399.0,3,14.0
+CUST101213,Karnataka,Prepaid Mobile,399.0,3,25.3
+CUST101983,Delhi NCR,Prepaid Mobile,399.0,3,15.3
+CUST103915,Delhi NCR,Prepaid Mobile,399.0,3,17.3
+CUST104566,Uttar Pradesh,Prepaid Mobile,399.0,3,15.7
+CUST104571,West Bengal,Prepaid Mobile,399.0,3,26.7
+CUST104573,Karnataka,Prepaid Mobile,399.0,3,32.0
+CUST105474,Gujarat,Prepaid Mobile,399.0,3,27.0
+CUST106674,Gujarat,Prepaid Mobile,399.0,3,29.3
+CUST107261,Uttar Pradesh,Prepaid Mobile,399.0,3,30.0
+CUST102548,Delhi NCR,Prepaid Mobile,348.0,3,9.7
+CUST102649,West Bengal,Prepaid Mobile,348.0,3,27.3
+CUST104090,Maharashtra,Prepaid Mobile,348.0,3,13.3
+CUST104490,Tamil Nadu,Prepaid Mobile,348.0,3,14.0
+CUST105372,Maharashtra,Prepaid Mobile,348.0,3,32.0
+CUST106787,Uttar Pradesh,Prepaid Mobile,348.0,3,14.7
+CUST100746,Delhi NCR,Prepaid Mobile,299.0,3,29.3
+CUST100946,Uttar Pradesh,Prepaid Mobile,299.0,3,20.7
+CUST101494,Karnataka,Prepaid Mobile,299.0,3,26.7
+CUST102044,Telangana,Prepaid Mobile,299.0,3,25.7
+CUST102305,Delhi NCR,Prepaid Mobile,299.0,3,19.3
+CUST102963,Tamil Nadu,Prepaid Mobile,299.0,3,25.3
+CUST103071,Telangana,Prepaid Mobile,299.0,3,18.3
+CUST103488,Delhi NCR,Prepaid Mobile,299.0,3,26.7
+CUST103891,Gujarat,Prepaid Mobile,299.0,3,23.0
+CUST104787,Uttar Pradesh,Prepaid Mobile,299.0,3,20.7
+CUST105708,Maharashtra,Prepaid Mobile,299.0,3,21.0
+CUST106096,Maharashtra,Prepaid Mobile,299.0,3,31.7
+CUST106975,Maharashtra,Prepaid Mobile,299.0,3,20.7
+CUST106746,Gujarat,Prepaid Mobile,298.0,3,19.0
+CUST100210,Gujarat,Prepaid Mobile,199.0,3,22.3
+CUST101348,Karnataka,Prepaid Mobile,199.0,3,20.3
+CUST101642,Karnataka,Prepaid Mobile,199.0,3,25.3
+CUST102097,Tamil Nadu,Prepaid Mobile,199.0,3,19.3
+CUST102105,Uttar Pradesh,Prepaid Mobile,199.0,3,17.0
+CUST102737,Tamil Nadu,Prepaid Mobile,199.0,3,26.3
+CUST103697,Maharashtra,Prepaid Mobile,199.0,3,26.7
+CUST103819,West Bengal,Prepaid Mobile,199.0,3,23.0
+CUST104032,Gujarat,Prepaid Mobile,199.0,3,30.7
+CUST104183,Karnataka,Prepaid Mobile,199.0,3,20.7
+CUST104786,Delhi NCR,Prepaid Mobile,199.0,3,32.0
+CUST105052,Tamil Nadu,Prepaid Mobile,199.0,3,18.0
+CUST105604,Tamil Nadu,Prepaid Mobile,199.0,3,24.7
+CUST105918,West Bengal,Prepaid Mobile,199.0,3,18.7
+CUST106089,Uttar Pradesh,Prepaid Mobile,199.0,3,19.0
+CUST106234,Karnataka,Prepaid Mobile,199.0,3,17.7
+CUST106739,Delhi NCR,Prepaid Mobile,199.0,3,13.0
+CUST107551,Gujarat,Prepaid Mobile,199.0,3,19.0

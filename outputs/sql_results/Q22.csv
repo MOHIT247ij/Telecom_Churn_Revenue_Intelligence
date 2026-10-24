@@ -1,0 +1,5 @@
+csat_bucket,customers,churn_rate_pct
+0. No rated tickets,997,47.34
+1. Detractor (<2.5),103,54.37
+2. Passive (2.5-3.5),1316,41.49
+3. Promoter (3.5+),5584,21.74

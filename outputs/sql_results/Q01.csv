@@ -1,0 +1,2 @@
+total_customers,active_customers,churned_customers,churn_rate_pct,avg_monthly_charge,current_mrr,avg_tenure_months
+8000,5712,2288,28.6,653.79,3575589.0,27.7

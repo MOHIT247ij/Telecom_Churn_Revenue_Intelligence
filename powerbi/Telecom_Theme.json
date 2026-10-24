@@ -1,0 +1,56 @@
+{
+  "name": "Telecom Churn Intelligence",
+  "dataColors": ["#2A78D6", "#EB6834", "#1BAF7A", "#EDA100", "#E87BA4", "#008300", "#4A3AA7", "#E34948"],
+  "good": "#1BAF7A",
+  "neutral": "#EDA100",
+  "bad": "#E34948",
+  "maximum": "#0B3D7A",
+  "center": "#9CC3EE",
+  "minimum": "#EAF2FC",
+  "background": "#FCFCFB",
+  "foreground": "#0B0B0B",
+  "tableAccent": "#2A78D6",
+  "textClasses": {
+    "callout": { "fontSize": 26, "fontFace": "Segoe UI Semibold", "color": "#0B0B0B" },
+    "title":   { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#0B0B0B" },
+    "header":  { "fontSize": 11, "fontFace": "Segoe UI Semibold", "color": "#52514E" },
+    "label":   { "fontSize": 10, "fontFace": "Segoe UI", "color": "#52514E" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#E6E5E0" } }, "radius": 8 }],
+        "dropShadow": [{ "show": false }],
+        "title": [{ "show": true, "fontColor": { "solid": { "color": "#0B0B0B" } }, "fontSize": 12, "alignment": "left" }],
+        "visualHeader": [{ "show": true }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#F4F5F7" } }, "transparency": 0 }]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [{ "fontSize": 24, "color": { "solid": { "color": "#0B0B0B" } } }],
+        "categoryLabels": [{ "fontSize": 10, "color": { "solid": { "color": "#52514E" } } }]
+      }
+    },
+    "lineChart": {
+      "*": {
+        "lineStyles": [{ "strokeWidth": 2, "showMarker": true, "markerSize": 4 }],
+        "valueAxis": [{ "gridlineColor": { "solid": { "color": "#E6E5E0" } } }]
+      }
+    },
+    "clusteredBarChart": {
+      "*": { "valueAxis": [{ "gridlineColor": { "solid": { "color": "#E6E5E0" } } }] }
+    },
+    "slicer": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#FFFFFF" } } }],
+        "items": [{ "fontColor": { "solid": { "color": "#0B0B0B" } }, "textSize": 10 }]
+      }
+    }
+  }
+}

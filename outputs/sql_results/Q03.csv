@@ -1,0 +1,5 @@
+contract_type,customers,churned,churn_rate_pct,lift_vs_avg
+Month-to-Month,1933,849,43.92,1.54
+Prepaid (No Contract),4143,1201,28.99,1.01
+12 Month,1060,163,15.38,0.54
+24 Month,864,75,8.68,0.3

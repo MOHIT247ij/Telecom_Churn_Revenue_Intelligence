@@ -1,0 +1,277 @@
+// =====================================================================
+//  Telecom Customer Churn & Revenue Intelligence  -  DAX MEASURE LIBRARY
+//  Create a blank table named  _Measures  (Enter Data > OK) and add each
+//  measure below to it. Display folders are given in [brackets].
+//  Prerequisite: dim_date marked as Date Table (column: dim_date[date]).
+// =====================================================================
+
+
+// ---------------------------------------------------------------------
+// [01 Customers]
+// ---------------------------------------------------------------------
+Total Customers =
+    DISTINCTCOUNT ( dim_customer[customer_id] )
+
+Churned Customers =
+    CALCULATE ( [Total Customers], dim_customer[churn_flag] = 1 )
+
+Active Customers =
+    CALCULATE ( [Total Customers], dim_customer[churn_flag] = 0 )
+
+Churn Rate % =
+    DIVIDE ( [Churned Customers], [Total Customers] )
+
+Retention Rate % =
+    1 - [Churn Rate %]
+
+Avg Tenure (Months) =
+    AVERAGE ( dim_customer[tenure_months] )
+
+// Churn lift vs company average - use for conditional formatting
+Churn Lift vs Avg =
+    VAR _all = CALCULATE ( [Churn Rate %], ALLSELECTED ( dim_customer ) )
+    RETURN DIVIDE ( [Churn Rate %], _all )
+
+
+// ---------------------------------------------------------------------
+// [02 Subscriber Movement]  (time-intelligent, uses inactive relationships)
+//   Inactive rels:  dim_customer[join_date]  -> dim_date[date]
+//                   dim_customer[churn_date] -> dim_date[date]
+// ---------------------------------------------------------------------
+New Subscribers =
+    CALCULATE (
+        COUNTROWS ( dim_customer ),
+        USERELATIONSHIP ( dim_customer[join_date], dim_date[date] )
+    )
+
+Churned in Period =
+    CALCULATE (
+        COUNTROWS ( dim_customer ),
+        USERELATIONSHIP ( dim_customer[churn_date], dim_date[date] ),
+        dim_customer[churn_flag] = 1
+    )
+
+Net Adds =
+    [New Subscribers] - [Churned in Period]
+
+Opening Subscribers =
+    VAR _start = MIN ( dim_date[date] )
+    RETURN
+        CALCULATE (
+            COUNTROWS ( dim_customer ),
+            REMOVEFILTERS ( dim_date ),
+            dim_customer[join_date] < _start,
+            ISBLANK ( dim_customer[churn_date] ) || dim_customer[churn_date] >= _start
+        )
+
+Closing Subscribers =
+    [Opening Subscribers] + [New Subscribers] - [Churned in Period]
+
+Monthly Churn Rate % =
+    DIVIDE ( [Churned in Period], [Opening Subscribers] )
+
+// average of monthly churn rates across the selected months
+Avg Monthly Churn Rate % =
+    AVERAGEX ( VALUES ( dim_date[year_month] ), [Monthly Churn Rate %] )
+
+
+// ---------------------------------------------------------------------
+// [03 Revenue]
+// ---------------------------------------------------------------------
+Total Revenue =
+    SUM ( fact_billing[amount_billed] )
+
+Revenue Collected =
+    SUM ( fact_billing[amount_paid] )
+
+Outstanding Amount =
+    SUM ( fact_billing[outstanding] )
+
+Collection Efficiency % =
+    DIVIDE ( [Revenue Collected], [Total Revenue] )
+
+Billed Subscribers =
+    DISTINCTCOUNT ( fact_billing[customer_id] )
+
+// ARPU per month (correct even when several months are selected)
+ARPU =
+    DIVIDE (
+        [Total Revenue],
+        SUMX ( VALUES ( dim_date[year_month] ), CALCULATE ( [Billed Subscribers] ) )
+    )
+
+Avg Monthly Revenue (MRR) =
+    AVERAGEX ( VALUES ( dim_date[year_month] ), [Total Revenue] )
+
+Revenue PM =
+    CALCULATE ( [Total Revenue], DATEADD ( dim_date[date], -1, MONTH ) )
+
+Revenue MoM % =
+    DIVIDE ( [Total Revenue] - [Revenue PM], [Revenue PM] )
+
+Revenue PY =
+    CALCULATE ( [Total Revenue], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+
+Revenue YoY % =
+    DIVIDE ( [Total Revenue] - [Revenue PY], [Revenue PY] )
+
+// Indian financial year (April-March)
+Revenue FYTD =
+    TOTALYTD ( [Total Revenue], dim_date[date], "3/31" )
+
+Revenue Running Total =
+    CALCULATE (
+        [Total Revenue],
+        FILTER ( ALL ( dim_date[date] ), dim_date[date] <= MAX ( dim_date[date] ) )
+    )
+
+Late Payment Rate % =
+    DIVIDE (
+        CALCULATE ( COUNTROWS ( fact_billing ), fact_billing[payment_status] = "Paid Late" ),
+        COUNTROWS ( fact_billing )
+    )
+
+
+// ---------------------------------------------------------------------
+// [04 Revenue Leakage]
+// ---------------------------------------------------------------------
+MRR Lost to Churn =
+    CALCULATE (
+        SUM ( dim_customer[monthly_charges] ),
+        USERELATIONSHIP ( dim_customer[churn_date], dim_date[date] ),
+        dim_customer[churn_flag] = 1
+    )
+
+Annualised Revenue Lost =
+    [MRR Lost to Churn] * 12
+
+Cumulative MRR Lost =
+    CALCULATE (
+        [MRR Lost to Churn],
+        FILTER ( ALL ( dim_date[date] ), dim_date[date] <= MAX ( dim_date[date] ) )
+    )
+
+New MRR =
+    CALCULATE (
+        SUM ( dim_customer[monthly_charges] ),
+        USERELATIONSHIP ( dim_customer[join_date], dim_date[date] )
+    )
+
+Net New MRR =
+    [New MRR] - [MRR Lost to Churn]
+
+// Share of revenue from top 20% customers (Pareto)
+Top 20% Revenue Share =
+    VAR _n = ROUNDUP ( [Billed Subscribers] * 0.2, 0 )
+    VAR _top =
+        TOPN ( _n, VALUES ( fact_billing[customer_id] ), CALCULATE ( [Total Revenue] ), DESC )
+    RETURN DIVIDE ( CALCULATE ( [Total Revenue], _top ), [Total Revenue] )
+
+
+// ---------------------------------------------------------------------
+// [05 Predictive Risk]  (fact_churn_predictions = ML output)
+// ---------------------------------------------------------------------
+Revenue at Risk =
+    SUM ( fact_churn_predictions[revenue_at_risk] )
+
+Scored Customers =
+    COUNTROWS ( fact_churn_predictions )
+
+High Risk Customers =
+    CALCULATE ( [Scored Customers], fact_churn_predictions[risk_tier] = "High" )
+
+Medium Risk Customers =
+    CALCULATE ( [Scored Customers], fact_churn_predictions[risk_tier] = "Medium" )
+
+High Risk Revenue =
+    CALCULATE ( [Revenue at Risk], fact_churn_predictions[risk_tier] = "High" )
+
+Avg Churn Probability =
+    AVERAGE ( fact_churn_predictions[churn_probability] )
+
+Avg Predicted CLV =
+    AVERAGE ( fact_churn_predictions[predicted_clv] )
+
+Revenue at Risk % of Annual =
+    DIVIDE ( [Revenue at Risk], SUM ( fact_churn_predictions[annual_revenue] ) )
+
+
+// ---------------------------------------------------------------------
+// [06 Retention Campaign ROI]  - needs two What-If parameters:
+//   Modeling > New parameter > Numeric range
+//     'Save Rate'   : 0.10 .. 0.60 step 0.05 default 0.30
+//     'Offer Cost'  : 100  .. 800  step 50   default 300
+// ---------------------------------------------------------------------
+Targeted Customers =
+    CALCULATE ( [Scored Customers], fact_churn_predictions[risk_tier] IN { "High", "Medium" } )
+
+Campaign Cost =
+    [Targeted Customers] * 'Offer Cost'[Offer Cost Value]
+
+Revenue Saved (Gross Margin) =
+    CALCULATE ( [Revenue at Risk], fact_churn_predictions[risk_tier] IN { "High", "Medium" } )
+        * 'Save Rate'[Save Rate Value] * 0.40
+
+Campaign Net Benefit =
+    [Revenue Saved (Gross Margin)] - [Campaign Cost]
+
+Campaign ROI % =
+    DIVIDE ( [Campaign Net Benefit], [Campaign Cost] )
+
+
+// ---------------------------------------------------------------------
+// [07 Customer Experience & Network]
+// ---------------------------------------------------------------------
+Total Tickets =
+    COUNTROWS ( fact_tickets )
+
+Avg CSAT =
+    AVERAGE ( fact_tickets[csat_score] )
+
+Avg Resolution Hours =
+    AVERAGE ( fact_tickets[resolution_hours] )
+
+Resolution Rate % =
+    DIVIDE ( SUM ( fact_tickets[resolved_flag] ), [Total Tickets] )
+
+Tickets per 100 Customers =
+    DIVIDE ( [Total Tickets], [Billed Subscribers] ) * 100
+
+Network Ticket Share % =
+    DIVIDE (
+        CALCULATE ( [Total Tickets],
+            fact_tickets[category] IN { "Network / Coverage", "Slow Data Speed", "Broadband Outage" } ),
+        [Total Tickets]
+    )
+
+Avg Call Drop Rate % =
+    AVERAGE ( fact_usage[call_drop_rate_pct] ) / 100
+
+Avg Speed (Mbps) =
+    AVERAGE ( fact_usage[avg_speed_mbps] )
+
+Avg Data per User (GB) =
+    AVERAGE ( fact_usage[data_used_gb] )
+
+
+// ---------------------------------------------------------------------
+// [08 UX helpers - dynamic titles & conditional colours]
+// ---------------------------------------------------------------------
+Title Executive =
+    "Telecom Performance  |  "
+        & IF ( ISFILTERED ( dim_geography[circle] ),
+               CONCATENATEX ( VALUES ( dim_geography[circle] ), dim_geography[circle], ", " ),
+               "All Circles" )
+        & "  |  " & FORMAT ( MIN ( dim_date[date] ), "MMM-yy" ) & " to " & FORMAT ( MAX ( dim_date[date] ), "MMM-yy" )
+
+Churn Colour =
+    SWITCH ( TRUE (),
+        [Churn Lift vs Avg] >= 1.3, "#E34948",
+        [Churn Lift vs Avg] >= 1.0, "#EDA100",
+        "#1BAF7A" )
+
+KPI Revenue Arrow =
+    IF ( [Revenue MoM %] >= 0, "▲ ", "▼ " ) & FORMAT ( ABS ( [Revenue MoM %] ), "0.0%" ) & " MoM"
+
+Last Refresh =
+    "Data as of " & FORMAT ( MAX ( fact_billing[bill_month] ), "MMM yyyy" )

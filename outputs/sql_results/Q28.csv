@@ -1,0 +1,4 @@
+risk_tier,customers,avg_churn_prob,annual_revenue,revenue_at_risk,risk_share_pct
+High,364,0.72,3186784.0,2318527.0,38.1
+Medium,505,0.418,3756534.0,1557969.0,25.6
+Low,4843,0.062,35963750.0,2204918.0,36.3

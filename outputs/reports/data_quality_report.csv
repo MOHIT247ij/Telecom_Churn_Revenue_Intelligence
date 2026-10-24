@@ -1,0 +1,12 @@
+rule,description,rows_affected
+R0,Raw customer rows loaded,8085
+R1,Duplicate customer rows removed,85
+R2,Gender labels standardised,800
+R3,City names trimmed / title-cased,400
+R4,Invalid ages nulled (12) + imputed (total),252
+R5,Blank total_charges recovered from billing,120
+R6,Missing payment_method imputed (mode by service),160
+R7,Negative data usage corrected,15
+R8,Types cast & derived features added,8000
+R9,Orphan billing rows (FK check),0
+QC,Remaining nulls (excl. churn_date/reason),0

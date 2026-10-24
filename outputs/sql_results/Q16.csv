@@ -1,0 +1,12 @@
+plan_id,plan_name,plan_tier,customers,churn_rate_pct,lifetime_revenue
+PO599,Postpaid Plus,Mid,859,24.91,11011806.0
+PO999,Postpaid Family (3 SIM),Premium,489,36.2,8798339.0
+FB999,Fiber 300 Mbps,Premium,548,31.2,8770410.0
+PP299,Prepaid Smart 5G,Value,1426,27.42,8439281.0
+FB699,Fiber 100 Mbps,Mid,654,20.8,8311571.0
+PO1499,Postpaid Premium,Premium,330,44.85,7733013.0
+PP399,Prepaid Unlimited 5G,Value,1016,29.82,7348785.0
+PO399,Postpaid Essential,Value,750,19.2,6755471.0
+PP199,Prepaid Basic 4G,Value,1285,28.09,5352762.0
+FB1499,Fiber 1 Gbps,Premium,227,42.73,4791390.0
+PP599,Prepaid Unlimited Plus,Mid,416,35.1,4653776.0

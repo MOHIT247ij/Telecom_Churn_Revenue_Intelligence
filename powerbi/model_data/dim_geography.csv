@@ -1,0 +1,25 @@
+geo_key,circle,city,city_tier,zone,country
+G001,Delhi NCR,Gurugram,Tier 1,North,India
+G002,Delhi NCR,New Delhi,Tier 1,North,India
+G003,Delhi NCR,Noida,Tier 1,North,India
+G004,Gujarat,Ahmedabad,Tier 1,West,India
+G005,Gujarat,Surat,Tier 2,West,India
+G006,Gujarat,Vadodara,Tier 2,West,India
+G007,Karnataka,Bengaluru,Tier 1,South,India
+G008,Karnataka,Hubballi,Tier 2,South,India
+G009,Karnataka,Mysuru,Tier 2,South,India
+G010,Maharashtra,Mumbai,Tier 1,West,India
+G011,Maharashtra,Nagpur,Tier 2,West,India
+G012,Maharashtra,Nashik,Tier 2,West,India
+G013,Maharashtra,Pune,Tier 1,West,India
+G014,Tamil Nadu,Chennai,Tier 1,South,India
+G015,Tamil Nadu,Coimbatore,Tier 2,South,India
+G016,Tamil Nadu,Madurai,Tier 2,South,India
+G017,Telangana,Hyderabad,Tier 1,South,India
+G018,Telangana,Warangal,Tier 2,South,India
+G019,Uttar Pradesh,Kanpur,Tier 2,North,India
+G020,Uttar Pradesh,Lucknow,Tier 2,North,India
+G021,Uttar Pradesh,Varanasi,Tier 2,North,India
+G022,West Bengal,Howrah,Tier 2,East,India
+G023,West Bengal,Kolkata,Tier 1,East,India
+G024,West Bengal,Siliguri,Tier 2,East,India

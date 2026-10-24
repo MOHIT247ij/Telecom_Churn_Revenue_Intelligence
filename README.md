@@ -6,6 +6,34 @@
 
 ---
 
+## 📸 Screenshots
+
+### Power BI dashboard (6 pages)
+
+| Executive Overview | Churn Analysis |
+|---|---|
+| ![Executive Overview](outputs/dashboard_screenshots/01_executive_overview.png) | ![Churn Analysis](outputs/dashboard_screenshots/02_churn_analysis.png) |
+| **Revenue Intelligence** | **Risk & Retention (ML)** |
+| ![Revenue Intelligence](outputs/dashboard_screenshots/03_revenue_intelligence.png) | ![Risk & Retention](outputs/dashboard_screenshots/04_risk_retention.png) |
+| **Customer Experience & Network** | **Customer 360 (drill-down)** |
+| ![Customer Experience](outputs/dashboard_screenshots/05_customer_experience.png) | ![Customer 360](outputs/dashboard_screenshots/06_customer_360.png) |
+
+<!--STREAMLIT_GALLERY-->
+
+### Python analysis (selected charts)
+
+| Monthly churn & tariff-hike shock | Churn by contract |
+|---|---|
+| ![](outputs/charts/09_monthly_churn_trend.png) | ![](outputs/charts/01_churn_by_contract.png) |
+| **Model comparison (ROC)** | **Top churn drivers** |
+| ![](outputs/charts/13_roc_curves.png) | ![](outputs/charts/16_feature_importance.png) |
+| **Cohort retention** | **Revenue at risk by circle** |
+| ![](outputs/charts/20_cohort_retention.png) | ![](outputs/charts/23_revenue_at_risk_by_circle.png) |
+
+All 23 charts are in [`outputs/charts/`](outputs/charts/).
+
+---
+
 ## 1. Business problem
 
 The telecom operator faces two problems:

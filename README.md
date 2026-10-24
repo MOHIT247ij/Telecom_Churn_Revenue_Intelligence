@@ -18,7 +18,12 @@
 | **Customer Experience & Network** | **Customer 360 (drill-down)** |
 | ![Customer Experience](outputs/dashboard_screenshots/05_customer_experience.png) | ![Customer 360](outputs/dashboard_screenshots/06_customer_360.png) |
 
-<!--STREAMLIT_GALLERY-->
+### 🌐 Streamlit Web App (`run_app.bat`)
+
+| Executive Overview | Upload your own CSV → churn scores + reasons |
+|---|---|
+| ![App Executive Overview](outputs/app_screenshots/01_app_executive_overview.png) | ![App Upload Mode](outputs/app_screenshots/02_app_upload_mode.png) |
+
 
 ### Python analysis (selected charts)
 
